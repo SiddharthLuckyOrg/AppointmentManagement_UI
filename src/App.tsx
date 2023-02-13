@@ -1,17 +1,18 @@
 import React from 'react';
-import {Greet} from "./components/Greet";
 import './App.css';
-import {Person} from "./components/Person";
+import {Button} from "./components/Button";
+import {Input} from "./components/Input";
+
 
 function App() {
-    const personName = {
-        firstName: "Bruce",
-        lastName: "Wayne"
-    }
   return (
     <div className="App">
-        <Greet name = "Check" count={20} isloggedIn={true}/>
-        <Person name={personName}/>
+        <Button handleClick={(event, id) =>{
+            console.log("Button Clicked", event, id)
+        }}></Button>
+        <Input value='' handleChange={event => {
+            console.log(event)
+        }}></Input>
     </div>
   );
 }
