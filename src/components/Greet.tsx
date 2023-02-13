@@ -1,14 +1,16 @@
 
 type Greetprops = {
-    name: string
+    //Adding a question mark makes the property optional
+    name?: string
     count: number
-    isloggedIn: boolean
+    isLoggedIn: boolean
 }
 export const Greet = (props: Greetprops) => {
+    const{count = 0} = props;
     return (
         <div>
             {
-                props.isloggedIn ? <h1>Name is {props.name} and count {props.count} and user Logged in: {props.isloggedIn}</h1> : <h1>Not logged in</h1>
+                props.isLoggedIn ? <h1>Name is {props.name} and count {count} and user Logged in: {props.isLoggedIn}</h1> : <h1>Not logged in</h1>
             }
         </div>
     )
